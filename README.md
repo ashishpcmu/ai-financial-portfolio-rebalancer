@@ -89,7 +89,7 @@ Optional: Save results to markdown file .
 ## 📦 Tested With
 
 - Python 3.11+
-- LangChain 0.1.14+
+- LangChain 0.3.23
 - OpenAI GPT-4
 - Groq LLaMA 3 8B / 70B models
 
