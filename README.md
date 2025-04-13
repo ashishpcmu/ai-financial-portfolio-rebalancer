@@ -32,54 +32,46 @@ Ensure you're using Python **3.8 or later**.
 Install dependencies:
 
 ```bash
-pip install langchain langchain-openai langchain-groq langchain-community
-pip install pandas requests yfinance python-dotenv
-```
+pip install langchain-openai langchain-groq
 
-If using in **Google Colab**, also install:
-
-```bash
-!pip install --upgrade --quiet langchain langchain-openai langchain-groq yfinance
 ```
 
 ---
 
 ### 2. 🔐 API Key Configuration
 
-Create a `.env` file in your project root:
+Create a `.env` file in your project root or add the following keys in Colab secrets:
 
 ```
 OPENAI_API_KEY=your_openai_key_here
 GROQ_API_KEY=your_groq_key_here
 ```
 
-> 🔒 **Note:** Never commit `.env` files to GitHub.
-
 ---
 
-### 3. ⚙️ File Structure
-
-```
-📁 your_project/
-├── agai_hw3.py                 # Main script with LangChain agent + tools
-├── .env                        # API keys (not tracked by Git)
-├── llm_performance_comparison.md  # Generated output/report (optional)
-├── README.md                   # This file
-```
-
----
 
 ### 4. ▶️ Run the Script
 
-```bash
-python agai_hw3.py
+- Use run_test_cases() function to run the script which gives a dictionary ouput for test cases.
+
+- To generate performance report and write it to a file:
+    Use generate_performance_report(metrics,fname) function 
+    where metrics = 'output from run_test_cases()' and fname = 'File name for report'
+
+- Additionally, use print_results(pmetrics) function to print performance metrics without writing to file.
+
+  Example:
+
+```
+  if __name__ == "__main__":
+    pmetrics = run_test_cases()
 ```
 
-If using in a notebook:
-
-```python
-from agai_hw3 import run_test_cases
-run_test_cases()
+```
+  generate_performance_report(pmetrics,'llm_performance_comparison2')
+```
+```
+  print_results(pmetrics)
 ```
 
 ---
@@ -88,12 +80,9 @@ run_test_cases()
 
 The script prints performance metrics and financial advice per portfolio for each LLM.
 
-Optional: Save results to markdown:
+Optional: Save results to markdown file .
 
-```python
-with open("/content/drive/MyDrive/llm_report.md", "w") as f:
-    f.write(formatted_results)
-```
+
 
 ---
 
@@ -108,11 +97,6 @@ with open("/content/drive/MyDrive/llm_report.md", "w") as f:
 
 ## 👨‍💻 Authors
 
-Developed for the **Applied Generative AI Assignment 3 (AgAI HW3)**.  
-Contributions by: [Your Name]
+Contributions by: Ashish Palli
 
 ---
-
-## 📜 License
-
-MIT License (if applicable)
