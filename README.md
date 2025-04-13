@@ -1,7 +1,7 @@
 
 # 📈 AI-Powered Financial Portfolio Rebalancer
 
-This project is an intelligent assistant that analyzes stock portfolios, detects imbalances, and suggests rebalancing actions using real-time market data. It uses **LangChain agents** with integration of multiple LLMs (OpenAI, Groq with LLaMA models) to dynamically select and run financial tools.
+This project is an intelligent AI agent that analyzes stock portfolios, detects imbalances, and suggests rebalancing actions using real-time market data. It uses **LangChain agents** with integration of multiple LLMs (OpenAI, Groq with LLaMA models) to dynamically select and run financial tools.
 
 ---
 
